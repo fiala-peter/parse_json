@@ -1,0 +1,14 @@
+{
+	"hallgatok": [
+		{
+			"nev": "moni",
+			"lany_e": true,
+			"magassag": -0.3
+		},
+		{
+			"nev": "gergo",
+			"lany_e": false,
+			"magassag": null
+		}
+	]
+}
