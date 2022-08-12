@@ -1,17 +1,17 @@
-CXX=gcc
+CC=gcc
 CFLAGS=-Wall -pedantic -O3
-LFLAGS=-lm
+LDLIBS=-lm
 
 all: test
 
 doc:
 	doxygen
 
-%.o: %.c
-	$(CXX) -c $(CFLAGS) $^ -o $@
+#%.o: %.c
+#	$(CC) -c $(CFLAGS) $^ -o $@
 
 test: test.o parse_json.o lex_json.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+	$(CC) $^ -o $@ $(LDLIBS)
 
 install: parse_json.o lex_json.o
 	ar r libparse_json.a $^
@@ -19,4 +19,4 @@ install: parse_json.o lex_json.o
 	cp lex_json.h parse_json.h /usr/local/include
 
 clean:
-	rm *.a *.o test
+	rm *.o test
